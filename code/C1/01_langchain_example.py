@@ -17,8 +17,8 @@ markdown_path = "../../data/C1/markdown/easy-rl-chapter1.md"
 loader = UnstructuredMarkdownLoader(markdown_path)
 docs = loader.load()
 
-# 文本分块
-text_splitter = RecursiveCharacterTextSplitter()
+# 文本分块,参数值为默认值
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=4000,chunk_overlap=200)
 chunks = text_splitter.split_documents(docs)
 
 # 中文嵌入模型
@@ -48,21 +48,21 @@ prompt = ChatPromptTemplate.from_template("""请根据下面提供的上下文�
 # 配置大语言模型
 
 # 使用 AIHubmix
-llm = ChatOpenAI(
-    model="glm-4.7-flash-free",
-    temperature=0.7,
-    max_tokens=4096,
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
-    base_url="https://aihubmix.com/v1"
-)
-
 # llm = ChatOpenAI(
-#     model="deepseek-chat",
+#     model="glm-4.7-flash-free",
 #     temperature=0.7,
 #     max_tokens=4096,
 #     api_key=os.getenv("DEEPSEEK_API_KEY"),
-#     base_url="https://api.deepseek.com"
+#     base_url="https://aihubmix.com/v1"
 # )
+
+llm = ChatOpenAI(
+    model="deepseek-chat",
+    temperature=0.7,
+    max_tokens=4096,
+    api_key=os.getenv("DEEPSEEK_API_KEY"),
+    base_url="https://api.deepseek.com"
+)
 
 # 用户查询
 question = "文中举了哪些例子？"
@@ -72,4 +72,18 @@ retrieved_docs = vectorstore.similarity_search(question, k=3)
 docs_content = "\n\n".join(doc.page_content for doc in retrieved_docs)
 
 answer = llm.invoke(prompt.format(question=question, context=docs_content))
-print(answer)
+
+print("回答内容：")
+print(answer.content)
+
+print("\nadditional_kwargs:")
+print(answer.additional_kwargs)
+
+print("\nresponse_metadata:")
+print(answer.response_metadata)
+
+print("\nid:")
+print(answer.id)
+
+print("\nusage_metadata:")
+print(answer.usage_metadata)
