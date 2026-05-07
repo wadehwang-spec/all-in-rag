@@ -22,12 +22,12 @@ node_parser = SentenceWindowNodeParser.from_defaults(
     original_text_metadata_key="original_text",
 )
 sentence_nodes = node_parser.get_nodes_from_documents(documents)
-sentence_index = VectorStoreIndex(sentence_nodes)
+sentence_index = VectorStoreIndex(sentence_nodes,show_progress=True)
 
 # 3.2 常规分块索引 (基准)
 base_parser = SentenceSplitter(chunk_size=512)
 base_nodes = base_parser.get_nodes_from_documents(documents)
-base_index = VectorStoreIndex(base_nodes)
+base_index = VectorStoreIndex(base_nodes,show_progress=True)
 
 # 4. 构建查询引擎
 sentence_query_engine = sentence_index.as_query_engine(

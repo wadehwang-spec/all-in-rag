@@ -5,6 +5,11 @@
     "database": "ecommerce"
   },
   {
+    "question": "查询某个用户来自北京",
+    "sql": "SELECT id,name,email,age,address FROM users WHERE u.city = '北京'",
+    "database": "ecommerce"
+  },
+  {
     "question": "查找年龄大于25岁的用户",
     "sql": "SELECT * FROM users WHERE age > 25",
     "database": "ecommerce"

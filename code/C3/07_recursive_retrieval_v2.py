@@ -8,6 +8,7 @@ from llama_index.core.vector_stores import MetadataFilters, ExactMatchFilter
 from llama_index.llms.deepseek import DeepSeek
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
+#用于从 .env 文件中读取环境变量到 Python 环境中
 load_dotenv()
 
 # 配置模型

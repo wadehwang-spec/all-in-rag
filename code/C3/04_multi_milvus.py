@@ -20,11 +20,16 @@ class Encoder:
     """编码器类，用于将图像和文本编码为向量。"""
     def __init__(self, model_name: str, model_path: str):
         self.model = Visualized_BGE(model_name_bge=model_name, model_weight=model_path)
+        #将模型切换到推理模式（eval），关闭 Dropout 和 BatchNorm 的训练行为
         self.model.eval()
 
+    #接收图像路径和文本，返回一个 list[float] 类型的向量
     def encode_query(self, image_path: str, text: str) -> list[float]:
+        #上下文管理器 torch.no_grad()：禁用梯度计算，节省显存，加速推理
         with torch.no_grad():
+            # 调用模型的 encode 方法，传入图像和文本，生成多模态嵌入向量
             query_emb = self.model.encode(image=image_path, text=text)
+        #转换格式：tensor → list[list[float]] → list[float]，提取第一行    
         return query_emb.tolist()[0]
 
     def encode_image(self, image_path: str) -> list[float]:
@@ -36,18 +41,40 @@ def visualize_results(query_image_path: str, retrieved_images: list, img_height:
     """从检索到的图像列表创建一个全景图用于可视化。"""
     panoramic_width = img_width * row_count
     panoramic_height = img_height * row_count
+    # 创建两个白色画布（RGB=255）
+    # panoramic_image：检索结果的网格区域（3×3）
+    # query_display_area：左侧查询图像展示区
     panoramic_image = np.full((panoramic_height, panoramic_width, 3), 255, dtype=np.uint8)
     query_display_area = np.full((panoramic_height, img_width, 3), 255, dtype=np.uint8)
 
     # 处理查询图像
+    # 将 RGB 转为 BGR
     query_pil = Image.open(query_image_path).convert("RGB")
+    #     np.array(query_pil)：将PIL图像转为numpy数组，形状为 (高度, 宽度, 3)
+    # [:, :, ::-1]：RGB → BGR 转换
+    # ::-1 表示反转最后一个维度（颜色通道）
+    # PIL使用RGB顺序，OpenCV使用BGR顺序
+    # 不转换会导致颜色显示异常（红蓝颠倒）
     query_cv = np.array(query_pil)[:, :, ::-1]
+    # 将图像缩放到统一尺寸
     resized_query = cv2.resize(query_cv, (img_width, img_height))
+    # 上下左右各添加10像素边框
     bordered_query = cv2.copyMakeBorder(resized_query, 10, 10, 10, 10, cv2.BORDER_CONSTANT, value=(255, 0, 0))
+    # query_display_area 初始化为全白
+    # 形状：(900, 300, 3) 假设 panoramic_height=900, img_width=300
+    # 将查询图像放置在左侧面板的底部区域
     query_display_area[img_height * (row_count - 1):, :] = cv2.resize(bordered_query, (img_width, img_height))
+    # 目标图像
+    # 文本内容
+    # 位置 (x, y)
+    # 字体类型
+    # 字体大小
+    # 颜色 (BGR)
+    # 粗细
+    # 线条类型（默认实线）
     cv2.putText(query_display_area, "Query", (10, panoramic_height - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
-    # 处理检索到的图像
+    # 处理检索到的图像？
     for i, img_path in enumerate(retrieved_images):
         row, col = i // row_count, i % row_count
         start_row, start_col = row * img_height, col * img_width
@@ -74,9 +101,11 @@ if milvus_client.has_collection(COLLECTION_NAME):
     milvus_client.drop_collection(COLLECTION_NAME)
     print(f"已删除已存在的 Collection: '{COLLECTION_NAME}'")
 
+# 查找指定目录下所有 PNG 图像文件
 image_list = glob(os.path.join(DATA_DIR, "dragon", "*.png"))
 if not image_list:
     raise FileNotFoundError(f"在 {DATA_DIR}/dragon/ 中未找到任何 .png 图像。")
+# 通过编码第一张图像来确定向量维度。
 dim = len(encoder.encode_image(image_list[0]))
 
 fields = [
@@ -158,3 +187,31 @@ milvus_client.release_collection(collection_name=COLLECTION_NAME)
 print(f"已从内存中释放 Collection: '{COLLECTION_NAME}'")
 milvus_client.drop_collection(COLLECTION_NAME)
 print(f"已删除 Collection: '{COLLECTION_NAME}'")
+
+
+
+#                    代码结构说明：
+#=================================================
+# 1. 初始化模型和Milvus客户端
+#    ↓
+# 2. 删除旧的collection（避免冲突）
+#    ↓
+# 3. 扫描dragon目录下所有PNG图像
+#    ↓
+# 4. 编码第一张图像获取向量维度
+#    ↓
+# 5. 创建Milvus Schema和Collection
+#    ↓
+# 6. 批量编码所有图像并插入数据库
+#    ↓
+# 7. 创建HNSW索引（加速检索）
+#    ↓
+# 8. 加载collection到内存
+#    ↓
+# 9. 执行多模态查询（query.png + "一条龙"）
+#    ↓
+# 10. 返回Top-5相似图像
+#    ↓
+# 11. 可视化结果（全景图）
+#    ↓
+# 12. 清理资源（可选，示例中会删除数据）
