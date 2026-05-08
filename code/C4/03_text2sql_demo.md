@@ -1,0 +1,53 @@
+# main
+
+## setup_demo
+- **获取环境变量，判断 llm api key**
+- **创建数据库 `create_demo_database`**
+  - 创建 `text2sql_demo.db` 库，包括表结构和数据
+  - 创建数据库是在方法里面直接执行，跟 `db_descriptions.json` 没关系
+- **初始化 Text2SQL 代理 `SimpleText2SQLAgent`**
+  - **init: 加载知识库 (milvus_uri)**
+    - init: milvus_uri
+    - init: embedding_function = `BGEM3EmbeddingFunction`
+    - init: 创建 collection 命名
+    - init: 设置集合 `_setup_collection`，创建集合，定义字段，创建索引
+  - **init: SQL 生成**
+    - init: 初始化 llm
+  - **init: 配置控制参数**
+    - 最大重试次数
+    - 记录数限制
+    - 检索前几条记录
+- **`agent.connect_database`**，连接数据库
+- **`knowledge.load_data`**，加载知识库
+  - 加载 ddl 数据，`ddl_examples.json`
+    - 读取文件，整理成 list
+    - list 转换为 contents 和 type
+    - `_insert_data`（生成嵌入 embeddings、构建稠密向量、插入 milvus 数据库）
+  - 加载 qsql 数据，查询示例数据，`qsql_examples.json`
+    - 读取文件，整理成 list
+    - list 转换为 contents 和 type
+    - `_insert_data`（生成嵌入 embeddings、构建稠密向量、插入 milvus 数据库）
+  - 加载描述数据，`db_descriptions.json`
+    - 读取文件，整理成 list
+    - list 转换为 contents 和 type
+    - `_insert_data`（生成嵌入 embeddings、构建稠密向量、插入 milvus 数据库）
+  - 把 collection 加载到内存，方便后续 search
+- **开始进行查询 `run_demo_queries`**
+  - **`agent.query`**，按每个问题，逐个查询
+    - 判断数据库是否已连接（sqllite）
+    - 检索知识库，取回 top5 的记录
+      - 向量化查询 `query_embeddings`
+      - 解析查询结果，组装成 json 格式
+    - 生成 SQL，入参为用户查询语句和知识库检索返回的内容
+      - `_build_context`：构建上下文信息，把知识库检索的内容，按类型重新组装
+      - 构建 prompt，调用 llm，返回 sql 语句
+      - 加工 sql 语句，去掉 sql 字样、引号空格等
+    - 执行 SQL
+      - 添加 limit 限制
+      - 执行 sql 语句
+      - 判断是查询则构建查询结果 json，还是非查询则 commit 事务，返回成功或失败
+    - 判断是否执行成功，是否超过最大尝试次数
+      - 修复 sql，对 sql 变量重新赋值，循环进入下一次尝试执行 SQL 语句
+      - 尝试后提示执行失败，或回到成功
+- **打印查询内容**
+- **清理资源**
