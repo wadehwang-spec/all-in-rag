@@ -2,7 +2,8 @@ import os
 from langchain_community.vectorstores import FAISS
 from langchain.retrievers import ContextualCompressionRetriever
 from langchain.retrievers.document_compressors import LLMChainExtractor
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+#from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_deepseek import ChatDeepSeek
@@ -130,7 +131,7 @@ class ColBERTReranker(BaseDocumentCompressor):
 
 
 # 初始化配置
-hf_bge_embeddings = HuggingFaceBgeEmbeddings(
+hf_bge_embeddings = HuggingFaceEmbeddings(
     model_name="BAAI/bge-large-zh-v1.5"
 )
 
