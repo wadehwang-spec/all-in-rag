@@ -1,3 +1,18 @@
+1.  import 模块
+2.  class ColBERTReranker 定义（不运行）
+3.  hf_bge_embeddings = HuggingFaceEmbeddings(...)     ← 初始化
+4.  llm = ChatDeepSeek(...)                            ← 初始化
+5.  loader.load() + split_documents()                  ← 加载文档
+6.  FAISS.from_documents()                             ← 构建向量库
+7.  base_retriever = ...                               ← 创建检索器
+8.  reranker = ColBERTReranker()                       ← 加载 BERT 模型
+9.  compressor = LLMChainExtractor.from_llm(llm)       ← 创建 LLM 压缩器
+10. pipeline_compressor = DocumentCompressorPipeline   ← 组装管道
+11. final_retriever = ContextualCompressionRetriever   ← 创建压缩检索器
+12. base_retriever.get_relevant_documents(query)       ← 基础检索
+13. final_retriever.get_relevant_documents(query)      ← 重排+压缩检索
+
+
 步骤1：文档加载与向量化 (1-2)
 目的：准备好待检索的本地文档，并将其向量化存入索引。
 

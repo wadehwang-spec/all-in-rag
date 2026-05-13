@@ -1,5 +1,6 @@
 from openai import OpenAI
 import os
+from pprint import pprint
 
 # 初始化 OpenAI 客户端
 client = OpenAI(
@@ -61,6 +62,9 @@ if message.tool_calls:
 
     # 将工具的执行结果作为一个新的消息添加到历史中
     messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": tool_output})
+    
+    # 打印格式化的 messages，这个是第一次调用时，才会有打印，第二次模型不再调用tools
+    pprint(messages, indent=2, width=100)
 
     # 3. 第二次调用：将工具结果返回给模型，获取最终回答
     print("--- 将工具结果返回给模型，获取最终答案 ---")

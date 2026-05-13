@@ -1,0 +1,717 @@
+2026-05-13 05:44:56,169 - rag_modules.index_construction - INFO - 正在初始化嵌入模型: BAAI/bge-small-zh-v1.5
+2026-05-13 05:44:57,961 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:44:57,999 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/modules.json "HTTP/1.1 200 OK"
+2026-05-13 05:44:58,260 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-13 05:44:58,261 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-13 05:44:58,296 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-13 05:44:58,297 - sentence_transformers.base.model - INFO - Loading SentenceTransformer model from BAAI/bge-small-zh-v1.5.
+2026-05-13 05:44:58,544 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:44:58,580 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-13 05:44:58,826 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:44:58,861 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/README.md "HTTP/1.1 200 OK"
+2026-05-13 05:44:59,105 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:44:59,145 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/modules.json "HTTP/1.1 200 OK"
+2026-05-13 05:44:59,399 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:44:59,439 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-13 05:44:59,682 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-13 05:44:59,930 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:44:59,968 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/config.json "HTTP/1.1 200 OK"
+============================================================
+🍽️  尝尝咸淡RAG系统 - 交互式问答  🍽️
+============================================================
+💡 解决您的选择困难症，告别'今天吃什么'的世纪难题！
+🚀 正在初始化RAG系统...
+初始化数据准备模块...
+初始化索引构建模块...
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 17579.43it/s]
+2026-05-13 05:45:00,254 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-13 05:45:00,500 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-13 05:45:00,741 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-13 05:45:01,010 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-13 05:45:01,480 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:45:01,544 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-13 05:45:01,790 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:45:01,827 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/config.json "HTTP/1.1 200 OK"
+2026-05-13 05:45:02,079 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:45:02,118 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/config.json "HTTP/1.1 200 OK"
+2026-05-13 05:45:02,372 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:45:02,408 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-13 05:45:02,658 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-zh-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-13 05:45:02,912 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-zh-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-13 05:45:03,179 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-zh-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-13 05:45:03,217 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-zh-v1.5/7999e1d3359715c523056ef9478215996d62a620/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-13 05:45:03,471 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-zh-v1.5 "HTTP/1.1 200 OK"
+2026-05-13 05:45:03,473 - rag_modules.index_construction - INFO - 嵌入模型初始化完成
+2026-05-13 05:45:03,473 - rag_modules.generation_integration - INFO - 正在初始化LLM: deepseek-chat
+2026-05-13 05:45:03,547 - rag_modules.generation_integration - INFO - LLM初始化完成
+2026-05-13 05:45:03,547 - rag_modules.index_construction - INFO - 索引路径不存在: ./vector_index，将构建新索引
+2026-05-13 05:45:03,547 - rag_modules.data_preparation - INFO - 正在从 ../../data/C8/cook 加载文档...
+2026-05-13 05:45:03,575 - rag_modules.data_preparation - INFO - 成功加载 323 个文档
+2026-05-13 05:45:03,575 - rag_modules.data_preparation - INFO - 正在进行Markdown结构感知分块...
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/咖喱炒蟹.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/微波葱姜黑鳕鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/水煮鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/清蒸生蚝.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/红烧鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/红烧鱼头.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,576 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/红烧鲤鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/吐司果酱.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/太阳蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/完美水煮蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/微波炉荷包蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/微波炉蛋糕.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/手抓饼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/桂圆红枣粥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/水煮玉米.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/溏心蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,577 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/煎饺.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/燕麦鸡蛋饼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/牛奶燕麦.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/空气炸锅面包片.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/美式炒蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/茶叶蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/蒸水蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/蒸花卷.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/蛋煎糍粑.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/金枪鱼酱三明治.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/鸡蛋三明治.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,578 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/油酥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/炸串酱料.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/简易版炒糖色.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/糖醋汁.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/葱油.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/蒜香酱油.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/B52轰炸机.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/Mojito莫吉托.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/冬瓜茶.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/可乐桶.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/奶茶.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,579 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/杨枝甘露.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/酸梅汤（半成品加工）.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/长岛冰茶.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/乡村啤酒鸭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/冷吃兔.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/可乐鸡翅.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/咕噜肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/商芝肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/孜然牛肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/小炒肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,580 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/小米辣炒肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/小酥肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/尖椒炒牛肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/山西过油肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/带把肘子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/意式烤鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/杀猪菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/椒盐排条.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,581 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/水煮肉片.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/洋葱炒猪肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/烤鸡翅.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/猪肉烩酸菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/甜辣烤全翅.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/番茄红酱.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/白菜猪肉炖粉条.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/粉蒸肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/糖醋里脊.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,582 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/肉饼炖蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/萝卜炖羊排.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/蒜苔炒肉末.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/虎皮肘子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/蚂蚁上树.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/辣椒炒肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/香干肉丝.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/鱼香肉丝.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/麻辣香锅.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,583 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/黄焖鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/黄瓜炒肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/凉皮.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/半成品意面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/牛油火锅底料.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/速冻水饺.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/速冻馄饨.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/奶油蘑菇汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,584 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/小米粥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/生汆丸子汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/番茄牛肉蛋花汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/皮蛋瘦肉粥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/米粥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/紫菜蛋花汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/罗宋汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/腊八粥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/西红柿鸡蛋汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,585 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/金针菇汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/陈皮排骨汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/手工水饺.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/汤面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/炒年糕.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/炒方便面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/炒河粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/炒馍.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/炸酱面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,586 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/热干面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/煮泡面加蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/老干妈拌面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/肉蛋盖饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/葱油拌面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/蒸卤面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/蛋包饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/蛋炒饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/螺蛳粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,587 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/酸辣蕨根粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/醪糟小汤圆.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/韭菜盒子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/麻油拌面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/麻辣减脂荞麦面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/凉拌油麦菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/凉拌豆腐.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/凉拌金针菇.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/凉拌黄瓜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/地三鲜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/松仁玉米.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,588 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/水油焖蔬菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/油醋爆蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/清炒花菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/清蒸南瓜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/炒茄子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/炒青菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/素炒豆角.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/红烧茄子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/脆皮豆腐.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/茄子炖土豆.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,589 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/葱煎豆腐.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/蒜蓉西兰花.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/蒲烧茄子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/蚝油生菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/西红柿炒鸡蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/酸辣土豆丝.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/金针菇日本豆腐煲.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/陕北熬豆角.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/雷椒皮蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/鸡蛋火腿炒黄瓜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,590 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/小龙虾/小龙虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/干煎阿根廷红虾/干煎阿根廷红虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/油焖大虾/油焖大虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/混合烤鱼/烤鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/清蒸鲈鱼/清蒸鲈鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/白灼虾/白灼虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/糖醋鲤鱼/糖醋鲤鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/芥末黄油罗氏虾/芥末黄油罗氏虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/葱油桂鱼/葱油桂鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,591 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/葱烧海参/葱烧海参.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/蒜蓉虾/蒜蓉虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/蒜香黄油虾/蒜香黄油虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/蛏抱蛋/蛏抱蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/香煎翘嘴鱼/香煎翘嘴鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/鲤鱼炖白菜/鲤鱼炖白菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/鳊鱼炖豆腐/鳊鱼炖豆腐.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>水产
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/aquatic/黄油煎虾/黄油煎虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/温泉蛋/温泉蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>早餐
+2026-05-13 05:45:03,592 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/breakfast/苏格兰蛋/苏格兰蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/油泼辣子/油泼辣子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/草莓酱/草莓酱.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>调料
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/condiment/蔗糖糖浆/蔗糖糖浆.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/反沙芋头/反沙芋头.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/咖啡椰奶冻/咖啡椰奶冻.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/奥利奥冰淇淋/奥利奥冰淇淋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/戚风蛋糕/戚风蛋糕.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/提拉米苏/提拉米苏.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,593 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/无厨师机蜂蜜面包/无厨师机蜂蜜面包.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/炸鲜奶/炸鲜奶.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/烤蛋挞/烤蛋挞.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/玛格丽特饼干/玛格丽特饼干.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/红柚蛋糕/红柚蛋糕.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/芋泥雪媚娘/芋泥雪媚娘.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/英式司康/英式司康.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/草莓冰淇淋/草莓冰淇淋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/酸奶意式奶冻/酸奶意式奶冻.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,594 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/雪花酥/雪花酥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/魔芋蛋糕/魔芋蛋糕.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>甜品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/dessert/龟苓膏/龟苓膏.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/冰粉/冰粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/奇异果菠菜特调/奇异果菠菜特调.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/柠檬水/柠檬水.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/泰国手标红茶/泰国手标红茶.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/海边落日/海边落日.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/百香果橙子特调/百香果橙子特调.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,595 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/砂糖椰子冰沙/砂糖椰子冰沙.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/耙耙柑茶/耙耙柑茶.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/菠萝咖啡特调/菠萝咖啡特调.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/酒酿醪糟/酒酿醪糟.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/酸梅汤/酸梅汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/金汤力/金汤力.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>饮品
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/drink/金菲士/金菲士.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/农家一碗香/农家一碗香.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/冬瓜酿肉/冬瓜酿肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,596 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/凉拌鸡丝/凉拌鸡丝.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/卤菜/卤菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/口水鸡/口水鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/台式卤肉饭/台式卤肉饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/咖喱肥牛/咖喱肥牛.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/啤酒鸭/啤酒鸭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/回锅肉/回锅肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/土豆炖排骨/土豆炖排骨.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,597 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/奶酪培根通心粉/奶酪培根通心粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/姜炒鸡/姜炒鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/姜葱捞鸡/姜葱捞鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/宫保鸡丁/宫保鸡丁.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/小炒鸡肝/小炒鸡肝.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/小炒黄牛肉/小炒黄牛肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/尖叫牛蛙/尖叫牛蛙.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/巴基斯坦牛肉咖喱/巴基斯坦牛肉咖喱.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,598 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/干煸仔鸡/干煸仔鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/广式萝卜牛腩/广式萝卜牛腩.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/徽派红烧肉/徽派红烧肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/新疆大盘鸡/新疆大盘鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/无骨鸡爪/无骨鸡爪.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/枝竹羊腩煲/枝竹羊腩煲.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/柱候牛腩/柱候牛腩.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/梅菜扣肉/梅菜扣肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,599 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/水煮牛肉/水煮牛肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/清蒸鳜鱼/清蒸鳜鱼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/湖南家常红烧肉/湖南家常红烧肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/湘祁米夫鸭/湘祁米夫鸭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/牛排/牛排.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/猪皮冻/猪皮冻.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/瘦肉土豆片/瘦肉土豆片.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/糖醋排骨/糖醋排骨.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,600 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/红烧猪蹄/红烧猪蹄.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/红烧肉/南派红烧肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/红烧肉/简易红烧肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/羊排焖面/羊排焖面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/老妈蹄花/老妈蹄花.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/老式锅包肉/老式锅包肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/芥末罗氏虾/芥末罗氏虾.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/茭白炒肉/茭白炒肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,601 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/荔枝肉/荔枝肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/荷兰豆炒腊肠/荷兰豆炒腊肠.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/血浆鸭/血浆鸭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/西红柿土豆炖牛肉/西红柿土豆炖牛肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/西红柿牛腩/西红柿牛腩.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/豆豉鲮鱼油麦菜/豆豉鲮鱼油麦菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/豉汁蒸白鱔/豉汁蒸白鱔食谱.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/贵州辣子鸡/贵州辣子鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/酱排骨/酱排骨.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,602 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/酱牛肉/酱牛肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/醉排骨/醉排骨.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/青椒土豆炒肉/青椒土豆炒肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/香干芹菜炒肉/香干芹菜炒肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/香煎五花肉/香煎五花肉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/香菇滑鸡/香菇滑鸡.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/香辣鸡爪煲/香辣鸡爪煲.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/鱼香茄子/鱼香茄子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/麻婆豆腐/麻婆豆腐.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,603 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/黑椒牛柳/黑椒牛柳.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>荤菜
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/meat_dish/黔式腊肠娃娃菜/黔式腊肠娃娃菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/懒人蛋挞/懒人蛋挞.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/炸薯条/炸薯条.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/空气炸锅羊排/空气炸锅羊排.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/空气炸锅鸡翅中/空气炸锅鸡翅中.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/semi-finished/速冻汤圆/速冻汤圆.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/勾芡香菇汤/勾芡香菇汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/排骨苦瓜汤/排骨苦瓜汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/昂刺鱼豆腐汤/昂刺鱼豆腐汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,604 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/朱雀汤/朱雀汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/玉米排骨汤/玉米排骨汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/羊肉汤/羊肉汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/菌菇炖乳鸽/菌菇炖乳鸽.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/银耳莲子粥/银耳莲子粥.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>汤品
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/soup/陈皮排骨汤/陈皮排骨汤.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/中式馅饼/中式馅饼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/凉粉/凉粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,605 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/基础牛奶面包/基础牛奶面包.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/微波炉腊肠煲仔饭/微波炉腊肠煲仔饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/意式肉酱面/意式肉酱面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/扬州炒饭/扬州炒饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/披萨饼皮/披萨饼皮.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/日式咖喱饭/日式咖喱饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,606 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/日式肥牛丼饭/日式肥牛丼饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/河南蒸面条/河南蒸面条.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/火腿饭团/火腿饭团.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/炒凉粉/炒凉粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/炒意大利面/炒意大利面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/烙饼/烙饼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/烧饼/芝麻烧饼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/电饭煲三文鱼炊饭/电饭煲三文鱼炊饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/空气炸锅照烧鸡饭/空气炸锅照烧鸡饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/米饭/煮锅蒸米饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/米饭/电饭煲蒸米饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,607 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/老友猪肉粉/老友猪肉粉.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/茄子肉煎饼/茄子肉煎饼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/西红柿鸡蛋挂面/西红柿鸡蛋挂面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/豆角焖面/豆角焖面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/酱拌荞麦面/酱拌荞麦面.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/韩式拌饭/韩式拌饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>主食
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/staple/鲣鱼海苔玉米饭/鲣鱼海苔玉米饭.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/template/示例菜/示例菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,608 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/上汤娃娃菜/上汤娃娃菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/凉拌木耳/凉拌木耳.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/凉拌莴笋/凉拌莴笋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/包菜炒鸡蛋粉丝/包菜炒鸡蛋粉丝.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/小炒藕丁/小炒藕丁.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/干锅花菜/干锅花菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/手撕包菜/手撕包菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/拔丝土豆/拔丝土豆.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/椒盐玉米/椒盐玉米.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/榄菜肉末四季豆/榄菜肉末四季豆.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,609 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/洋葱炒鸡蛋/洋葱炒鸡蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/炒滑蛋/炒滑蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/烤茄子/烤茄子.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/白灼菜心/白灼菜心.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/糖拌西红柿/糖拌西红柿.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/红烧冬瓜/红烧冬瓜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/芹菜拌茶树菇/芹菜拌茶树菇.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/莴笋叶煎饼/莴笋叶煎饼.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/菠菜炒鸡蛋/菠菜炒鸡蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/蒜蓉空心菜/蒜蓉空心菜.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,610 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/虎皮青椒/虎皮青椒.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/蚝油三鲜菇/蚝油三鲜菇.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/西红柿豆腐汤羹/西红柿豆腐汤羹.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/西葫芦炒鸡蛋/西葫芦炒鸡蛋.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/话梅煮毛豆/话梅煮毛豆.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/鸡蛋羹/微波炉鸡蛋羹.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/鸡蛋羹/蒸箱鸡蛋羹.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - 菜品信息>>>>>>>>>>>>>素菜
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - WARNING - 文档 ../../data/C8/cook/dishes/vegetable_dish/鸡蛋羹/鸡蛋羹.md Markdown分割失败: 'str' object has no attribute 'metadata'
+2026-05-13 05:45:03,611 - rag_modules.data_preparation - INFO - Markdown结构分割完成，生成 323 个结构化块
+2026-05-13 05:45:03,612 - rag_modules.data_preparation - INFO - Markdown分块完成，共生成 323 个chunk
+2026-05-13 05:45:03,612 - rag_modules.index_construction - INFO - 正在构建FAISS向量索引...
+2026-05-13 05:45:40,921 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-05-13 05:45:40,937 - faiss.loader - INFO - Successfully loaded faiss with AVX512 support.
+2026-05-13 05:45:40,945 - rag_modules.index_construction - INFO - 向量索引构建完成，包含 323 个向量
+2026-05-13 05:45:40,946 - rag_modules.index_construction - INFO - 向量索引已保存到: ./vector_index
+2026-05-13 05:45:40,946 - rag_modules.retrieval_optimization - INFO - 正在设置检索器...
+2026-05-13 05:45:40,954 - rag_modules.retrieval_optimization - INFO - 检索器设置完成
+🤖 初始化生成集成模块...
+✅ 系统初始化完成！
+
+正在构建知识库...
+未找到已保存的索引，开始构建新索引...
+加载食谱文档...
+进行文本分块...
+构建向量索引...
+保存向量索引...
+初始化检索优化...
+
+📊 知识库统计:
+   文档总数: 323
+   文本块数: 323
+   菜品分类: ['水产', '早餐', '调料', '饮品', '荤菜', '其他', '汤品', '主食', '素菜', '甜品']
+   难度分布: {'困难': 78, '中等': 115, '非常简单': 27, '简单': 83, '非常困难': 20}
+✅ 知识库构建完成！
+
+交互式问答 (输入'退出'结束):
+
+您的问题: 
+感谢使用尝尝咸淡RAG系统！

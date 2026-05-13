@@ -15,10 +15,10 @@ class RAGConfig:
 
     # 模型配置
     embedding_model: str = "BAAI/bge-small-zh-v1.5"
-    llm_model: str = "kimi-k2-0711-preview"
+    llm_model: str = "deepseek-chat"
 
     # 检索配置
-    top_k: int = 3
+    top_k: int = 30
 
     # 生成配置
     temperature: float = 0.1
