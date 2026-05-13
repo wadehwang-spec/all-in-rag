@@ -92,6 +92,26 @@ class DataPreparationModule:
         logger.info(f"成功加载 {len(documents)} 个文档")
         return documents
     
+    def _find_category(self, doc: Document):
+        """
+        为文档添加分类标签
+        
+        Args:
+            doc: 需要添加分类标签的文档
+        """
+        file_path = Path(doc.metadata.get('source', ''))
+        path_parts = file_path.parts
+        
+        # 提取菜品分类
+        _category = '其他'
+        for key, value in self.CATEGORY_MAPPING.items():
+            if key in path_parts:
+                _category = value
+                logger.info("菜品信息>>>>>>>>>>>>>"+_category)
+                break
+
+        return _category    
+
     def _enhance_metadata(self, doc: Document):
         """
         增强文档元数据
@@ -191,6 +211,11 @@ class DataPreparationModule:
                 # 检查文档内容是否包含Markdown标题
                 content_preview = doc.page_content[:200]
                 has_headers = any(line.strip().startswith('#') for line in content_preview.split('\n'))
+                
+                if type(doc) is str:
+                    print("<<<<<<<<<<<<<<<<<<<"+doc)
+                    continue
+
 
                 if not has_headers:
                     logger.warning(f"文档 {doc.metadata.get('dish_name', '未知')} 内容中没有发现Markdown标题")
@@ -204,6 +229,9 @@ class DataPreparationModule:
                 # 如果没有分割成功，说明文档可能没有标题结构
                 if len(md_chunks) <= 1:
                     logger.warning(f"文档 {doc.metadata.get('dish_name', '未知')} 未能按标题分割，可能缺少标题结构")
+
+                #分割完之后，同时把分类增加到每个chunk的元数据中
+                md_chunks.extend(self._find_category(doc))
 
                 # 为每个子块建立与父文档的关系
                 parent_id = doc.metadata["parent_id"]
@@ -227,7 +255,7 @@ class DataPreparationModule:
                 all_chunks.extend(md_chunks)
 
             except Exception as e:
-                logger.warning(f"文档 {doc.metadata.get('source', '未知')} Markdown分割失败: {e}")
+                logger.error(f"文档 {doc.metadata.get('source', '未知')} Markdown分割失败: {e}")
                 # 如果Markdown分割失败，将整个文档作为一个chunk
                 all_chunks.append(doc)
 

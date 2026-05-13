@@ -33,13 +33,13 @@ class RetrievalOptimizationModule:
         # 向量检索器
         self.vector_retriever = self.vectorstore.as_retriever(
             search_type="similarity",
-            search_kwargs={"k": 5}
+            search_kwargs={"k": 50}
         )
 
         # BM25检索器
         self.bm25_retriever = BM25Retriever.from_documents(
             self.chunks,
-            k=5
+            k=50
         )
 
 
