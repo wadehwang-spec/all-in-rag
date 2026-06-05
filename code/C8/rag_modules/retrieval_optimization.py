@@ -59,10 +59,17 @@ class RetrievalOptimizationModule:
         """
         # 分别获取向量检索和BM25检索结果
         vector_docs = self.vector_retriever.invoke(query)
+
+        logger.info(f"向量检索 - 找到{len(vector_docs)}个匹配项")
+
         bm25_docs = self.bm25_retriever.invoke(query)
+        logger.info(f"BM25检索 - 找到{len(bm25_docs)}个匹配项")
 
         # 使用RRF重排
         reranked_docs = self._rrf_rerank(vector_docs, bm25_docs)
+        logger.info(f"RRF重排完成: 向量检索{len(vector_docs)}个文档, BM25检索{len(bm25_docs)}个文档, 混合后{len(reranked_docs)}个文档")
+
+        logger.info(f":top_k的数值是{top_k}")
         return reranked_docs[:top_k]
     
     def metadata_filtered_search(self, query: str, filters: Dict[str, Any], top_k: int = 5) -> List[Document]:
@@ -78,6 +85,7 @@ class RetrievalOptimizationModule:
             过滤后的文档列表
         """
         # 先进行混合检索，获取更多候选
+        # 先进行混合检索可能会丢失大部分的md信息，这也是输入早餐，只能得到几个md的原因，待验证
         docs = self.hybrid_search(query, top_k * 3)
         
         # 应用元数据过滤

@@ -154,16 +154,21 @@ class RecipeRAGSystem:
         else:
             # 详细查询和一般查询使用智能重写
             print("🤖 智能分析查询...")
+            # 这里调用了llm，针对查询做了进一步重写
             rewritten_query = self.generation_module.query_rewrite(question)
         
         # 3. 检索相关子块（自动应用元数据过滤）
         print("🔍 检索相关文档...")
+        # filters存放的时候类型，比如早餐、水产等，及难度系数
         filters = self._extract_filters_from_query(question)
+        logger.info(f"过滤条件: {filters}")
         if filters:
             print(f"应用过滤条件: {filters}")
             relevant_chunks = self.retrieval_module.metadata_filtered_search(rewritten_query, filters, top_k=self.config.top_k)
         else:
             relevant_chunks = self.retrieval_module.hybrid_search(rewritten_query, top_k=self.config.top_k)
+
+        logger.info(f"检索到 {len(relevant_chunks)} 个相关文档块")
 
         # 显示检索到的子块信息
         if relevant_chunks:
@@ -188,7 +193,7 @@ class RecipeRAGSystem:
         if not relevant_chunks:
             return "抱歉，没有找到相关的食谱信息。请尝试其他菜品名称或关键词。"
 
-        # 5. 根据路由类型选择回答方式
+        # 5. 根据路由类型选择回答方式，如果是列表，则只返回名称，如果是详细查询，则获取完整文档并生成详细回答
         if route_type == 'list':
             # 列表查询：直接返回菜品名称列表
             print("📋 生成菜品列表...")
