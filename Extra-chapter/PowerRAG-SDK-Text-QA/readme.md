@@ -268,7 +268,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 # 2) 配置 .env（在 code/ 目录下）
-cp .env.example .env
+cp .env .env
 
 # 3) 回到专题根目录运行（data/ 路径更直观）
 cd ..

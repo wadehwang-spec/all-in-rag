@@ -9,7 +9,7 @@ import json
 import sys
 import argparse
 from datetime import datetime
-from recipe_ai_agent import KimiRecipeAgent, RecipeKnowledgeGraphBuilder
+from recipe_ai_agent import Deepseekrecipeagent, RecipeKnowledgeGraphBuilder
 
 def load_config():
     """加载配置文件"""
@@ -95,14 +95,14 @@ def clean_batches(output_dir: str):
 def merge_batches(output_dir: str):
     """手动合并所有批次数据"""
     config = load_config()
-    api_key = config["kimi"].get("api_key")
+    api_key = config["deepseek"].get("api_key")
     
     if not api_key:
         print("❌ 未找到API密钥配置")
         return
     
     try:
-        ai_agent = KimiRecipeAgent(api_key)
+        ai_agent = Deepseekrecipeagent(api_key)
         builder = RecipeKnowledgeGraphBuilder(ai_agent, output_dir)
         
         print("合并批次数据...")
@@ -124,14 +124,14 @@ def merge_batches(output_dir: str):
 def continue_processing(recipe_dir: str, output_dir: str):
     """继续处理中断的任务"""
     config = load_config()
-    api_key = config["kimi"].get("api_key")
+    api_key = config["deepseek"].get("api_key")
     
     if not api_key:
         print("❌ 未找到API密钥配置")
         return
     
     try:
-        ai_agent = KimiRecipeAgent(api_key)
+        ai_agent = Deepseekrecipeagent(api_key)
         batch_size = config.get("processing", {}).get("batch_size", 20)
         builder = RecipeKnowledgeGraphBuilder(ai_agent, output_dir, batch_size)
         

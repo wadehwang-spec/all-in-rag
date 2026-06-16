@@ -85,7 +85,7 @@ class HybridRetrievalModule:
                 f"平均 token 数: {avg_tokens:.1f}"
             )
 
-        # 初始化图索引
+        # 初始化图索引到内存中
         self._build_graph_index()
 
         # 初始化父文档映射，每个nodeid对应该chunk所属父文档的document
@@ -132,7 +132,8 @@ class HybridRetrievalModule:
             
         except Exception as e:
             logger.error(f"构建图索引失败: {e}")
-            
+
+    # 获取关系列表
     def _extract_relationships_from_graph(self) -> List[Tuple[str, str, str]]:
         """从Neo4j图中提取关系"""
         relationships = []
@@ -237,6 +238,7 @@ class HybridRetrievalModule:
                 # 构建增强内容
                 enhanced_content = entity.value_content
                 if neighbors:
+
                     enhanced_content += f"\n相关信息: {', '.join(neighbors)}"
                 
                 results.append(RetrievalResult(
@@ -253,7 +255,7 @@ class HybridRetrievalModule:
                     }
                 ))
         
-        # 2. 如果图索引结果不足，使用Neo4j进行补充检索
+        # 2. 如果内存图索引结果不足，使用Neo4j进行补充检索
         if len(results) < top_k:
             neo4j_results = self._neo4j_entity_level_search(entity_keywords, top_k - len(results))
             results.extend(neo4j_results)
@@ -344,6 +346,7 @@ class HybridRetrievalModule:
                     # 添加源实体的详细信息
                     if source_entity.entity_type == "Recipe":
                         newline = '\n'
+                        #“只要标题，不要正文”。它从一长串多行文本中，精准地掐出了第一行最关键的信息。
                         content_parts.append(f"菜品详情: {source_entity.value_content.split(newline)[0]}")
                     
                     results.append(RetrievalResult(

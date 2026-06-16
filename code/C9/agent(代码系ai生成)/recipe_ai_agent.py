@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-基于Kimi API的智能菜谱解析AI Agent
+基于Deepseek API的智能菜谱解析AI Agent
 """
 
 import os
@@ -58,10 +58,10 @@ class RecipeInfo:
         if self.nutrition_info is None:
             self.nutrition_info = {}
 
-class KimiRecipeAgent:
-    """Kimi菜谱解析AI Agent"""
+class Deepseekrecipeagent:
+    """Deepseek菜谱解析AI Agent"""
     
-    def __init__(self, api_key: str, base_url: str = "https://api.moonshot.cn/v1"):
+    def __init__(self, api_key: str, base_url: str = "https://api.deepseek.com/v1"):
         self.api_key = api_key
         self.base_url = base_url
         self.client = OpenAI(
@@ -100,12 +100,12 @@ class KimiRecipeAgent:
         # 预定义的工具
         self.cooking_tools = ["炒锅", "平底锅", "蒸锅", "刀", "案板", "筷子", "锅铲", "勺子"]
     
-    def call_kimi_api(self, messages: List[Dict], max_retries: int = 3) -> str:
-        """调用Kimi API"""
+    def call_deepseek_api(self, messages: List[Dict], max_retries: int = 3) -> str:
+        """调用Deepseek API"""
         for attempt in range(max_retries):
             try:
                 response = self.client.chat.completions.create(
-                    model="kimi-k2-0711-preview",
+                    model="deepseek-chat",
                     messages=messages,
                     temperature=0.3,
                     max_tokens=2048,
@@ -119,7 +119,7 @@ class KimiRecipeAgent:
                 if attempt < max_retries - 1:
                     time.sleep(2 ** attempt)  # 指数退避
                     
-        raise Exception("Kimi API调用失败")
+        raise Exception("Deepseek API调用失败")
     
     def infer_category_from_path(self, file_path: str) -> str:
         """根据文件路径推断菜谱分类"""
@@ -214,7 +214,7 @@ class KimiRecipeAgent:
         ]
         
         try:
-            response = self.call_kimi_api(messages)
+            response = self.call_deepseek_api(messages)
             
             # 清理响应，确保是有效的JSON
             response = response.strip()
@@ -309,7 +309,7 @@ class KimiRecipeAgent:
 class RecipeKnowledgeGraphBuilder:
     """菜谱知识图谱构建器 - 支持分批保存和断点续传"""
     
-    def __init__(self, ai_agent: KimiRecipeAgent, output_dir: str = "./ai_output", batch_size: int = 20):
+    def __init__(self, ai_agent: Deepseekrecipeagent, output_dir: str = "./ai_output", batch_size: int = 20):
         self.ai_agent = ai_agent
         self.concepts = []
         self.relationships = []
@@ -1301,12 +1301,12 @@ def main():
     
     parser = argparse.ArgumentParser(description='使用AI智能解析菜谱生成知识图谱')
     parser.add_argument('recipe_dir', help='菜谱目录路径')
-    parser.add_argument('-k', '--api-key', required=True, help='Kimi API密钥')
+    parser.add_argument('-k', '--api-key', required=True, help='Deepseek API密钥')
     parser.add_argument('-o', '--output', default='./ai_output', help='输出目录路径')
     parser.add_argument('--format', choices=['csv', 'neo4j'], default='neo4j', 
                        help='输出格式 (csv 或 neo4j)')
-    parser.add_argument('--base-url', default='https://api.moonshot.cn/v1', 
-                       help='Kimi API基础URL')
+    parser.add_argument('--base-url', default='https://api.deepseek.com/v1',
+                       help='Deepseek API基础URL')
     
     args = parser.parse_args()
     
@@ -1316,8 +1316,8 @@ def main():
         return
     
     # 创建AI agent
-    print("初始化Kimi AI Agent...")
-    ai_agent = KimiRecipeAgent(args.api_key, args.base_url)
+    print("初始化Deepseek AI Agent...")
+    ai_agent = Deepseekrecipeagent(args.api_key, args.base_url)
     
     # 创建知识图谱构建器
     builder = RecipeKnowledgeGraphBuilder(ai_agent, args.output)
@@ -1340,7 +1340,7 @@ if __name__ == "__main__":
     # 测试用例
     if len(os.sys.argv) == 1:
         print("AI菜谱解析器测试模式")
-        print("请提供Kimi API密钥和菜谱目录路径")
+        print("请提供Deepseek API密钥和菜谱目录路径")
         print("使用方法:")
         print("python recipe_ai_agent.py /path/to/recipes -k YOUR_API_KEY")
     else:

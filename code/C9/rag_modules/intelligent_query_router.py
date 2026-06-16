@@ -11,6 +11,7 @@ from typing import List, Dict, Tuple, Any, Optional
 from dataclasses import dataclass
 from enum import Enum
 
+
 from langchain_core.documents import Document
 
 logger = logging.getLogger(__name__)
@@ -28,7 +29,7 @@ class QueryAnalysis:
     relationship_intensity: float  # 关系密集度 (0-1)
     reasoning_required: bool  # 是否需要推理
     entity_count: int  # 实体数量
-    recommended_strategy: SearchStrategy
+    recommended_strategy: SearchStrategy # 推荐策略
     confidence: float  # 推荐置信度
     reasoning: str  # 推荐理由
 
@@ -160,7 +161,7 @@ class IntelligentQueryRouter:
             entity_count=len(query.split()),
             recommended_strategy=strategy,
             confidence=0.6,
-            reasoning="基于规则的简单分析"
+            reasoning="基于规则的简单分析" #这里基于规则是指上面通过关键字判断的结果这个规则，不是指检索策略
         )
     
     def route_query(self, query: str, top_k: int = 5) -> Tuple[List[Document], QueryAnalysis]:

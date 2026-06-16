@@ -7,7 +7,7 @@
 import os
 import json
 import sys
-from recipe_ai_agent import KimiRecipeAgent, RecipeKnowledgeGraphBuilder
+from recipe_ai_agent import Deepseekrecipeagent, RecipeKnowledgeGraphBuilder
 
 def load_config():
     """加载配置文件"""
@@ -18,9 +18,9 @@ def load_config():
     else:
         print("警告: 未找到config.json配置文件，将使用默认配置")
         return {
-            "kimi": {
-                "api_key": "",
-                "base_url": "https://api.moonshot.cn/v1"
+            "deepseek": {
+                "api_key": "sk-52176556e4724403a30d880d4c9179c1",
+                "base_url": "https://api.deepseek.com/v1"
             },
             "output": {
                 "format": "neo4j",
@@ -30,9 +30,9 @@ def load_config():
 
 def setup_api_key():
     """设置API密钥"""
-    api_key = os.getenv('KIMI_API_KEY')
+    api_key = os.getenv('DEEPSEEK_API_KEY')
     if not api_key:
-        api_key = input("请输入Kimi API密钥: ").strip()
+        api_key = input("请输入DeepSeek API密钥: ").strip()
         if not api_key:
             print("错误: 必须提供API密钥")
             sys.exit(1)
@@ -84,12 +84,12 @@ def test_single_recipe():
     
     # 加载配置
     config = load_config()
-    api_key = config["kimi"].get("api_key")
-    if not api_key or api_key == "YOUR_KIMI_API_KEY_HERE":
+    api_key = config["deepseek"].get("api_key")
+    if not api_key or api_key == "YOUR_DEEPSEEK_API_KEY_HERE":
         api_key = setup_api_key()
     
     try:
-        agent = KimiRecipeAgent(api_key)
+        agent = Deepseekrecipeagent(api_key)
         recipe_info = agent.extract_recipe_info(test_recipe, "dishes/vegetable_dish/红烧茄子.md")
         
         print(f"测试成功: {recipe_info.name} ({len(recipe_info.ingredients)}个食材, {len(recipe_info.steps)}个步骤)")
@@ -113,8 +113,8 @@ def main():
     config = load_config()
     
     # 设置API密钥
-    api_key = config["kimi"].get("api_key")
-    if not api_key or api_key == "YOUR_KIMI_API_KEY_HERE":
+    api_key = config["deepseek"].get("api_key")
+    if not api_key or api_key == "YOUR_DEEPSEEK_API_KEY_HERE":
         api_key = setup_api_key()
     
     # 获取菜谱目录
@@ -135,7 +135,7 @@ def main():
     try:
         # 创建AI agent
         print("\n🤖 初始化AI Agent...")
-        ai_agent = KimiRecipeAgent(api_key, config["kimi"].get("base_url"))
+        ai_agent = Deepseekrecipeagent(api_key, config["deepseek"].get("base_url"))
         
         # 创建知识图谱构建器
         output_dir = config["output"].get("directory", "./ai_output")
@@ -184,7 +184,7 @@ def show_help():
   python run_ai_agent.py test
   
 环境变量:
-          KIMI_API_KEY - Kimi API密钥
+          DEEPSEEK_API_KEY - DEEPSEEK API密钥
   
 配置文件:
   config.json - 详细配置选项

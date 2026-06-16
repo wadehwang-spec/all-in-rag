@@ -1,9 +1,9 @@
 # AI菜谱知识图谱生成器
-## 基于Kimi大模型的智能菜谱解析系统
+## 基于Deepseek大模型的智能菜谱解析系统
 
 ### 🌟 新功能特性
 
-- **🤖 AI智能解析**: 使用Kimi大模型准确提取菜谱信息
+- **🤖 AI智能解析**: 使用Deepseek大模型准确提取菜谱信息
 - **📊 结构化输出**: 自动生成标准化的知识图谱数据
 - **🔄 批量处理**: 支持大规模菜谱目录的批量转换
 - **💾 多格式导出**: 支持Neo4j和CSV两种输出格式
@@ -23,13 +23,13 @@ pip install -r requirements.txt
 
 方法一：设置环境变量
 ```bash
-export KIMI_API_KEY="your_api_key_here"
+export DEEPSEEK_API_KEY="your_api_key_here"
 ```
 
 方法二：编辑config.json
 ```json
 {
-  "kimi": {
+  "deepseek": {
     "api_key": "your_api_key_here"
   }
 }

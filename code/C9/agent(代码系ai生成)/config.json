@@ -1,10 +1,10 @@
 {
-  "kimi": {
-    "api_key": "sk-xxx",
-    "base_url": "https://api.moonshot.cn/v1",
-    "model": "kimi-k2-0711-preview",
+ "deepseek": {
+    "api_key": "sk-52176556e4724403a30d880d4c9179c1",
+    "base_url": "https://api.deepseek.com/v1",
+    "model": "deepseek-chat",
     "max_retries": 3,
-    "timeout": 30
+    "timeout": 60
   },
   "processing": {
     "batch_size": 10,

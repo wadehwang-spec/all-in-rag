@@ -178,6 +178,8 @@ class MilvusIndexConstructionModule:
                 field_name="vector",
                 index_type="HNSW",
                 metric_type="COSINE",
+                # M=16：每个点最多连接16个邻居（值越大，精度越高，但内存越大）
+                # efConstruction = 200：构建时考虑200个候选点（值越大，质量越高，构建越慢）
                 params={
                     "M": 16,
                     "efConstruction": 200
@@ -218,11 +220,23 @@ class MilvusIndexConstructionModule:
             
             # 2. 准备数据
             logger.info("正在生成向量embeddings...")
+            # 写法1：列表推导式（推荐），texts也是列表
             texts = [chunk.page_content for chunk in chunks]
+            # vectors是 list[list[float]]
             vectors = self.embeddings.embed_documents(texts)
             
             # 3. 准备插入数据
             entities = []
+            # enumerate(zip(chunks, vectors))作用：把chunks和vectors两个列表按位置一一对应，组成元组对。
+            # chunks = [doc1, doc2, doc3]
+            # vectors = [vec1, vec2, vec3]
+            # zip后的结果（迭代器）：
+            # (doc1, vec1)
+            # (doc2, vec2)
+            # enumerate(zip(chunks, vectors))为每个配对的元组添加一个递增的索引
+            # (0, (doc1, vec1))
+            # (1, (doc2, vec2))
+            # 最后解包三个层次的嵌套
             for i, (chunk, vector) in enumerate(zip(chunks, vectors)):
                 entity = {
                     "id": self._safe_truncate(chunk.metadata.get("chunk_id", f"chunk_{i}"), 150),
@@ -348,15 +362,15 @@ class MilvusIndexConstructionModule:
                 for key, value in filters.items():
                     if isinstance(value, str):
                         filter_conditions.append(f'{key} == "{value}"')
-                    elif isinstance(value, (int, float)):
+                    elif isinstance(value, (int, float)): #如果是整形或浮点型
                         filter_conditions.append(f'{key} == {value}')
-                    elif isinstance(value, list):
+                    elif isinstance(value, list): # 如果是列表
                         # 支持IN操作
-                        if all(isinstance(v, str) for v in value):
+                        if all(isinstance(v, str) for v in value): #如果列表里面都是字符串，则用逗号拼接
                             value_str = '", "'.join(value)
                             filter_conditions.append(f'{key} in ["{value_str}"]')
-                        else:
-                            value_str = ', '.join(map(str, value))
+                        else: # 如果有非字符串
+                            value_str = ', '.join(map(str, value)) # 把所有元素转成字符串，用 ", " 连接
                             filter_conditions.append(f'{key} in [{value_str}]')
                 
                 if filter_conditions:
@@ -364,8 +378,8 @@ class MilvusIndexConstructionModule:
             
             # 执行搜索 - 修复参数传递
             search_params = {
-                "metric_type": "COSINE",
-                "params": {"ef": 64}
+                "metric_type": "COSINE",#使用余弦相似度
+                "params": {"ef": 64}#在搜索时，维护一个大小为 64 的候选列表从这 64 个候选者中选出最相似的 k 个结果
             }
             
             # 构建搜索参数，避免重复传递
@@ -382,7 +396,7 @@ class MilvusIndexConstructionModule:
             
             # 只在有过滤条件时添加filter参数
             if filter_expr:
-                search_kwargs["filter"] = filter_expr
+                search_kwargs["filter"] = filter_expr # 如果有过滤条件，加上 filter，如: category == "肉类"
                 
             results = self.client.search(**search_kwargs)
             
