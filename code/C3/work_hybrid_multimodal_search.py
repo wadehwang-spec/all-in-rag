@@ -150,6 +150,8 @@ class HybridMultimodalSearcher:
         )
         
         # 连接Milvus
+        # connections：是一个连接管理器，采用单例模式，负责管理一个或多个到Milvus的底层连接。你可以通过它注册和管理多个连接。
+        # MilvusClient：是一个更高层次的客户端对象，它封装了与Milvus交互的具体操作，比如search、insert等。当你实例化MilvusClient时，它内部会使用connections管理器来获取或建立一个实际的连接。
         print(f"--> 正在连接到 Milvus: {milvus_uri}")
         connections.connect(uri=milvus_uri)
         self.milvus_client = MilvusClient(uri=milvus_uri)
@@ -163,9 +165,10 @@ class HybridMultimodalSearcher:
             self.milvus_client.drop_collection(self.collection_name)
             print(f"已删除已存在的 Collection: '{self.collection_name}'")
 
-        # 获取向量维度
+        # 获取向量维度,images[0]第一个数据作为样本，或者长度维度
         sample_text = self.dataset.get_text_content(self.dataset.images[0])
         sample_path = self.dataset.images[0].path
+        # Milvus需要预先知道向量维度才能创建表
         multimodal_dim = len(self.encoder.encode_multimodal(sample_path, sample_text))
         dense_dim = self.encoder.bge_m3.dim["dense"]
         
@@ -183,6 +186,7 @@ class HybridMultimodalSearcher:
             FieldSchema(name="environment", dtype=DataType.VARCHAR, max_length=64),
             # 三种向量类型
             FieldSchema(name="multimodal_vector", dtype=DataType.FLOAT_VECTOR, dim=multimodal_dim),
+            # 只存储非零元素及其对应的索引位置。它不预先定义总长度，而是根据实际数据动态变化，不需要dim
             FieldSchema(name="text_sparse_vector", dtype=DataType.SPARSE_FLOAT_VECTOR),
             FieldSchema(name="text_dense_vector", dtype=DataType.FLOAT_VECTOR, dim=dense_dim)
         ]
@@ -194,6 +198,7 @@ class HybridMultimodalSearcher:
         # 创建索引
         print("--> 正在创建索引...")
         # 多模态向量索引
+        # 选择分层可导航小世界图算法，用余弦相似度衡量向量距离，控制索引质量和性能的调优参数，每个节点的最大连接数 ，构建时的动态候选列表大小
         multimodal_index = {"index_type": "HNSW", "metric_type": "COSINE", "params": {"M": 16, "efConstruction": 256}}
         self.collection.create_index("multimodal_vector", multimodal_index)
         print("多模态向量索引创建成功")
@@ -224,7 +229,7 @@ class HybridMultimodalSearcher:
             for img_data in tqdm(self.dataset.images, desc="生成向量嵌入"):
                 text_content = self.dataset.get_text_content(img_data)
                 
-                # 生成多模态向量（图像+文本）
+                # 生成多模态向量（图像+文本） ⭐ 关键：在这里生成多模态向量（图像+文本）
                 multimodal_vector = self.encoder.encode_multimodal(img_data.path, text_content)
                 
                 # 生成文本的混合向量（稀疏+密集）
