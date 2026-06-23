@@ -1,0 +1,214 @@
+完整调用链路
+📥 阶段一：系统初始化 (数据准备前)
+text
+main()
+  │
+  ├─→ HybridMultimodalSearcher.__init__(DATA_DIR, METADATA_PATH, COLLECTION_NAME, MILVUS_URI)
+  │     │
+  │     ├─→ DragonDataset.__init__(data_dir, metadata_path)
+  │     │     │
+  │     │     └─→ DragonDataset._load_metadata()
+  │     │           │
+  │     │           └─→ 读取 dragon.json → 创建 DragonImage 对象列表
+  │     │
+  │     ├─→ HybridMultimodalEncoder.__init__(visual_model_name, visual_model_path)
+  │     │     │
+  │     │     ├─→ Visualized_BGE.__init__()  # 加载多模态模型
+  │     │     └─→ BGEM3EmbeddingFunction.__init__()  # 加载BGE-M3模型
+  │     │
+  │     └─→ connections.connect(uri=milvus_uri)  # 连接Milvus数据库
+  │
+  └─→ 准备就绪
+📤 阶段二：数据入库 (向量化+索引)
+text
+searcher.create_collection()
+  │
+  ├─→ milvus_client.has_collection()  # 检查集合是否存在
+  │     └─→ 如存在则 milvus_client.drop_collection()
+  │
+  ├─→ 获取向量维度
+  │     ├─→ dataset.get_text_content(sample_img)  # 获取示例文本
+  │     ├─→ encoder.encode_multimodal(sample_path, sample_text) → len()  # 多模态维度
+  │     └─→ encoder.bge_m3.dim["dense"]  # 密集向量维度
+  │
+  ├─→ 创建 CollectionSchema
+  │     ├─→ FieldSchema (标量字段: pk, img_id, image_path, title...)
+  │     ├─→ FieldSchema (多模态向量: FLOAT_VECTOR, dim=multimodal_dim)
+  │     ├─→ FieldSchema (稀疏向量: SPARSE_FLOAT_VECTOR)
+  │     └─→ FieldSchema (密集向量: FLOAT_VECTOR, dim=dense_dim)
+  │
+  ├─→ Collection.__init__(name, schema)  # 创建集合
+  │
+  ├─→ 创建索引 (create_index)
+  │     ├─→ 多模态向量: HNSW索引 (COSINE距离)
+  │     ├─→ 稀疏向量: SPARSE_INVERTED_INDEX (IP距离)
+  │     └─→ 密集向量: AUTOINDEX (IP距离)
+  │
+  └─→ collection.load()  # 加载到内存
+text
+searcher.insert_data()
+  │
+  └─→ for each img_data in tqdm(dataset.images):
+        │
+        ├─→ dataset.get_text_content(img_data)
+        │     └─→ 拼接: title + description + location + environment + combat_details + scene_info
+        │
+        ├─→ encoder.encode_multimodal(img_data.path, text_content)
+        │     └─→ visual_model.encode(image=path, text=text) → 多模态向量
+        │
+        ├─→ encoder.encode_text_hybrid(text_content)
+        │     └─→ bge_m3([text]) → {sparse: 稀疏向量, dense: 密集向量}
+        │
+        └─→ 收集所有数据到列表
+              │
+              └─→ (循环结束后) collection.insert([所有字段])
+                    └─→ collection.flush()  # 持久化
+🔍 阶段三：用户查询 (四种模式)
+模式1: 多模态检索 (图像+文本)
+text
+searcher.search(query_image_path, query_text, mode="multimodal", top_k=3)
+  │
+  ├─→ encoder.encode_multimodal(query_image_path, query_text)
+  │     └─→ visual_model.encode(image=query_image_path, text=query_text) → 查询向量
+  │
+  ├─→ collection.search(
+  │     [query_vector],
+  │     "multimodal_vector",
+  │     param={"metric_type": "COSINE", "params": {"ef": 128}},
+  │     limit=top_k,
+  │     output_fields=["img_id", "image_path", "title", ...]
+  │   )
+  │     │
+  │     └─→ Milvus执行ANN搜索 → 返回Top-K结果
+  │
+  └─→ 返回 results (包含距离分数和元数据)
+模式2: 密集向量检索 (纯文本语义)
+text
+searcher.search(query_image_path, query_text, mode="dense", top_k=3)
+  │
+  ├─→ encoder.encode_text_hybrid(query_text)
+  │     └─→ bge_m3([query_text]) → {sparse, dense}
+  │           └─→ 提取 dense[0] (密集向量)
+  │
+  ├─→ collection.search(
+  │     [dense_vec],
+  │     "text_dense_vector",
+  │     param={"metric_type": "IP", "params": {}},
+  │     limit=top_k,
+  │     output_fields=[...]
+  │   )
+  │
+  └─→ 返回 results
+模式3: 稀疏向量检索 (关键词匹配)
+text
+searcher.search(query_image_path, query_text, mode="sparse", top_k=3)
+  │
+  ├─→ encoder.encode_text_hybrid(query_text)
+  │     └─→ bge_m3([query_text]) → {sparse, dense}
+  │           └─→ 提取 sparse._getrow(0) (稀疏向量)
+  │
+  ├─→ collection.search(
+  │     [sparse_vec],
+  │     "text_sparse_vector",
+  │     param={"metric_type": "IP", "params": {}},
+  │     limit=top_k,
+  │     output_fields=[...]
+  │   )
+  │
+  └─→ 返回 results
+模式4: 混合检索 (RRF融合)
+text
+searcher.search(query_image_path, query_text, mode="hybrid", top_k=3)
+  │
+  ├─→ encoder.encode_text_hybrid(query_text)
+  │     └─→ bge_m3([query_text]) → {sparse, dense}
+  │           ├─→ 提取 dense[0] (密集向量)
+  │           └─→ 提取 sparse._getrow(0) (稀疏向量)
+  │
+  ├─→ 创建搜索请求
+  │     ├─→ dense_req = AnnSearchRequest([dense_vec], "text_dense_vector", ...)
+  │     └─→ sparse_req = AnnSearchRequest([sparse_vec], "text_sparse_vector", ...)
+  │
+  ├─→ 创建RRF融合器
+  │     └─→ rerank = RRFRanker(k=60)
+  │
+  ├─→ collection.hybrid_search(
+  │     [sparse_req, dense_req],
+  │     rerank=rerank,
+  │     limit=top_k,
+  │     output_fields=[...]
+  │   )
+  │     │
+  │     └─→ Milvus执行并行搜索 + RRF重排序 → 返回融合结果
+  │
+  └─→ 返回 results
+📊 阶段四：结果对比与可视化
+text
+searcher.compare_search_modes(query_image_path, query_text, top_k=3)
+  │
+  └─→ for each mode in ["multimodal", "dense", "sparse", "hybrid"]:
+        │
+        └─→ searcher.search(query_image_path, query_text, mode, top_k)
+              │
+              └─→ 打印结果: 排名、标题、分数、路径、描述
+text
+searcher.visualize_comparison(query_image_path, query_text, top_k=3)
+  │
+  └─→ for each mode in ["multimodal", "dense", "sparse", "hybrid"]:
+        │
+        ├─→ searcher.search(query_image_path, query_text, mode, top_k)
+        │
+        └─→ visualize_results(query_image_path, retrieved_results, mode.upper())
+              │
+              ├─→ 读取查询图像 → 显示在左侧 (带蓝色边框和"Query"标记)
+              │
+              ├─→ for each retrieved result:
+              │     ├─→ 读取检索图像 → 调整大小 → 添加黑色边框
+              │     ├─→ 在图像上绘制排名序号 (红色)
+              │     └─→ 在图像上绘制相似度分数 (绿色)
+              │
+              └─→ 拼接全景图 → cv2.imwrite(f"{mode}_search_result.png")
+🧹 阶段五：资源清理
+text
+searcher.cleanup()
+  │
+  ├─→ collection.release()  # 从内存卸载
+  │
+  └─→ milvus_client.drop_collection(collection_name)  # 删除集合
+📋 完整数据流总结
+数据准备阶段的数据流
+text
+JSON元数据
+  → DragonImage对象
+  → get_text_content()
+  → encode_multimodal() + encode_text_hybrid()
+  → 三种向量 (多模态/密集/稀疏)
+  → Milvus Collection (标量+向量)
+  → 创建索引
+  → 加载到内存
+用户查询阶段的数据流
+text
+用户输入 (图像+文本)
+  ↓
+根据模式选择编码方式
+  ├─ 多模态: Visual-BGE → 查询向量
+  ├─ 密集: BGE-M3 → 密集查询向量
+  ├─ 稀疏: BGE-M3 → 稀疏查询向量
+  └─ 混合: BGE-M3 → 密集+稀疏查询向量
+  ↓
+Milvus向量检索 (ANN/Hybrid Search)
+  ↓
+返回Top-K结果 (带距离分数)
+  ↓
+可视化展示 (对比全景图)
+🎯 关键方法依赖关系
+方法	依赖	作用
+DragonDataset._load_metadata()	JSON文件	加载元数据
+DragonDataset.get_text_content()	DragonImage字段	组装文本描述
+HybridMultimodalEncoder.encode_multimodal()	Visual-BGE模型	生成多模态向量
+HybridMultimodalEncoder.encode_text_hybrid()	BGE-M3模型	生成稀疏+密集向量
+HybridMultimodalSearcher.create_collection()	Milvus连接	创建集合和索引
+HybridMultimodalSearcher.insert_data()	编码器+数据集	批量插入向量
+HybridMultimodalSearcher.search()	编码器+Milvus	执行检索
+visualize_results()	OpenCV+PIL	生成可视化结果
+这个调用链路清晰地展示了从数据准备到用户查询的完整流程，每个步骤都职责分明，模块之间通过明确的接口交互。
